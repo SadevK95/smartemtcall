@@ -67,7 +67,13 @@ var videoProfiles = [{
   label: "1080p_2",
   detail: "1920×1080, 30fps, 3000Kbps",
   value: "1080p_2"
-}];
+    },
+    {
+        label: "HL2_1",
+        detail: "1952×1100, 30fps, 2000Kbps",
+        value: "HL2_1"
+    },
+];
 var curVideoProfile;
 AgoraRTC.onAutoplayFailed = () => {
   alert("click to start autoplay!");
@@ -139,7 +145,7 @@ function initVideoProfiles() {
   videoProfiles.forEach(profile => {
     $(".profile-list").append(`<a class="dropdown-item" label="${profile.label}" href="#">${profile.label}: ${profile.detail}</a>`);
   });
-    curVideoProfile = videoProfiles.find(item => item.label == '720p_2');
+    curVideoProfile = videoProfiles.find(item => item.label == 'HL2_1');
   $(".profile-input").val(`${curVideoProfile.detail}`);
 }
 async function changeVideoProfile(label) {
